@@ -1,4 +1,4 @@
-# Workshop Day Migracao Datacenter para Cloud Azure
+# Workshop Day Migracao Datacenter para Azure
 
 Hands-on Lab
 
