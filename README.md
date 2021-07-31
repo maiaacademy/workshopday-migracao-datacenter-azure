@@ -216,7 +216,7 @@ For simplicity, there is no redundancy in any of the tiers.
 
 11. Close the virtual machine connection window for the **smarthotelweb1** VM. Connect to the **smarthotelweb2** and **smarthotelSQL1** VMs and repeat the installation process for both agents.
 
-You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dependency Agent on the **UbuntuWAF** VM. To do so, you will first connect to the UbuntuWAF remotely using an SSH session.
+1. You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dependency Agent on the **UbuntuWAF** VM. To do so, you will first connect to the UbuntuWAF remotely using an SSH session.
 
 12. Return to the RDP session with the **SmartHotelHost** and open a command prompt using the desktop shortcut.  
 
@@ -419,6 +419,26 @@ You will now deploy the Linux versions of the Microsoft Monitoring Agent and Dep
 4. Return to the **UbuntuWAF** VM overview blade and copy the **Public IP address** value.
 
 5. Open a new browser tab and paste the IP address into the address bar. Verify that the SmartHotel360 application is now available in Azure.
+
+## Project - Database Modernization (60 minutes)
+
+Migration SQL Server to Azure SQL Database
+
+   ![Screenshot of Azure SQL Migration](/AllFiles/Images/azure-sql-migration.png)
+
+**Important Notes**
+- Register Data Migration resouce provider with Azure Cloud Shell or Powershell:
+
+    ```PowerShell
+    Register-AzResourceProvider -ProviderNamespace Microsoft.DataMigration
+    ```
+
+- Azure SQL Database without Elastic pool;
+- Compute + storage: Standard S0 + 10 GB;
+- Azure Database Migration Service (DMS) use Virtual Network **DMSvnet**;
+- In the Virtual Machine **smarthotelweb2** remote desktop session, open Windows Explorer and navigate to the **C:\inetpub\SmartHotel.Registration.Wcf** folder Update the DefaultConnection setting to connect to your Azure SQL Database with connection strings.
+
+References: [Migrate SQL Server to for Azure SQL Database](https://docs.microsoft.com/en-us/learn/modules/migrate-sql-server-relational-data/2-exercise-environment-setup)
 
 1. End of day and **Workshop Day 01**.
 
